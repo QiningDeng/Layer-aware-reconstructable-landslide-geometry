@@ -36,7 +36,9 @@ Most numerical feature databases and model-related binary files are tracked usin
 
 ## RER2023 data note
 
-The original RER2023 landslide polygon inventory is not redistributed in this repository unless its redistribution terms are explicitly confirmed. The repository provides derivative data and reproducibility scripts for the analyses reported in the manuscript. Users who wish to reproduce the raw shapefile preprocessing step should obtain the original RER2023 inventory from its official data source and cite it according to the corresponding data-use terms.
+The RER2023 dataset is described in the following publication: Berti, M., Pizziolo, M., Scaroni, M., Generali, M., Critelli, V., Mulas, M., Tondo, M., Lelli, F., Fabbiani, C., Ronchetti, F., Ciccarese, G., Dal Seno, N., Ioriatti, E., Rani, R., Zuccarini, A., Simonelli, T., Corsini, A., 2025. RER2023: the landslide inventory dataset of the May 2023 Emilia-Romagna meteorological event. Earth System Science Data, 17(3), 1055–1074. https://doi.org/10.5194/essd-17-1055-2025.
+
+The official public release of the dataset can be accessed via Zenodo at: https://doi.org/10.5281/zenodo.13742643. Users should consult the original publication and data repository for detailed metadata, licensing conditions, and proper citation requirements.
 
 ## Citation
 
