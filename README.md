@@ -34,6 +34,14 @@ The scripts are organized according to the main workflow of the manuscript. The 
 
 Most numerical feature databases and model-related binary files are tracked using Git LFS. Users should install Git LFS before cloning the repository if they need to download the complete feature databases and model outputs.
 
+## Synthetic MatDEM data note
+
+The synthetic layered-profile images used in this repository were derived from MatDEM-based landslide deposition simulations originally developed for AI-enhanced landslide deposition prediction. Users who use the raw synthetic MatDEM images or derivative datasets generated from them should cite the original synthetic-data source:
+
+Cui, Y., Gong, C., Zheng, J., Wang, K., Han, J., Liu, W., Zhou, Y., 2026. AI-enhanced landslide deposition prediction: a novel framework integrating discrete element method and generative adversarial networks. Engineering Geology, 108752. https://doi.org/10.1016/j.enggeo.2026.108752.
+
+The present repository further processes these synthetic MatDEM images into background-cleaned images, layer-wise polygon records, SDF-corner-mask feature databases, no-learning reconstruction outputs, latent representation learning results, and tabular reconstructable geometric descriptors.
+
 ## RER2023 data note
 
 The RER2023 dataset is described in the following publication: Berti, M., Pizziolo, M., Scaroni, M., Generali, M., Critelli, V., Mulas, M., Tondo, M., Lelli, F., Fabbiani, C., Ronchetti, F., Ciccarese, G., Dal Seno, N., Ioriatti, E., Rani, R., Zuccarini, A., Simonelli, T., Corsini, A., 2025. RER2023: the landslide inventory dataset of the May 2023 Emilia-Romagna meteorological event. Earth System Science Data, 17(3), 1055–1074. https://doi.org/10.5194/essd-17-1055-2025.
@@ -43,3 +51,10 @@ The official public release of the dataset can be accessed via Zenodo at: https:
 ## Citation
 
 If this repository is useful for your research, please cite the associated manuscript once it becomes available.
+
+If you use the raw synthetic MatDEM layered-profile images or derivative datasets generated from them, please also cite:
+
+Cui, Y., Gong, C., Zheng, J., Wang, K., Han, J., Liu, W., Zhou, Y., 2026. AI-enhanced landslide deposition prediction: a novel framework integrating discrete element method and generative adversarial networks. Engineering Geology, 108752. https://doi.org/10.1016/j.enggeo.2026.108752.
+
+If you use the RER2023-derived data or reproduce the RER2023 preprocessing workflow, please obtain and cite the original RER2023 dataset according to its official publication and data repository.
+
