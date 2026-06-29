@@ -50,7 +50,7 @@ The official public release of the dataset can be accessed via Zenodo at: https:
 
 ## Citation
 
-If this repository is useful for your research, please cite the associated manuscript once it becomes available.
+If this repository is useful, please cite.
 
 If you use the raw synthetic MatDEM layered-profile images or derivative datasets generated from them, please also cite:
 
