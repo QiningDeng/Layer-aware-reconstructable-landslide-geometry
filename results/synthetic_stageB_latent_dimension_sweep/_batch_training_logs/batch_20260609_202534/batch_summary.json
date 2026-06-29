@@ -1,0 +1,12 @@
+{
+  "batch_id": "batch_20260609_202534",
+  "finished_at": "2026-06-18T08:49:55+08:00",
+  "planned_runs": 20,
+  "status_rows": 20,
+  "completed_runs": 19,
+  "failed_runs": 1,
+  "skipped_runs": 0,
+  "dry_runs": 0,
+  "batch_elapsed_seconds": 735853.269478,
+  "batch_elapsed_hhmmss": "204:24:13"
+}

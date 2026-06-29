@@ -1,0 +1,203 @@
+{
+  "checkpoint": "D:\\博士期间发表论文\\辰轩-秀如-其宁_合著论文\\★3.18数据预处理\\★3.18B步骤处理_主模型1+\\stageB_autodecoder--latent_dim_2\\checkpoints\\best_model.pt",
+  "model_type": "autodecoder",
+  "split_name": "val",
+  "sample_count": 120,
+  "latent_dim": 2,
+  "raw_feature_dim": 2359296,
+  "compression_ratio": 1179648.0,
+  "decoder_parameter_count": 274953,
+  "encoder_parameter_count": 0,
+  "model_parameter_count": 274953,
+  "device": {
+    "device_type": "cuda",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.13.9",
+    "torch_version": "2.7.1+cu128",
+    "cuda_available": true,
+    "cuda_version": "12.8",
+    "cudnn_version": 90701,
+    "device_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "device_index": 0,
+    "total_gpu_memory_bytes": 8585216000
+  },
+  "peak_gpu_memory_allocated_bytes": 99328000,
+  "evaluation_wall_time_seconds": 202.542248999991,
+  "evaluation_throughput_samples_per_second": 0.5924689816197575,
+  "timing_per_sample": {
+    "encoder_time_seconds": {
+      "count": 120,
+      "mean": 0.0,
+      "std": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "latent_optimization_time_seconds": {
+      "count": 120,
+      "mean": 1.5262290300030146,
+      "std": 0.2824077285992202,
+      "median": 1.4345640499668662,
+      "p95": 1.8663738000206649,
+      "min": 1.1581747999880463,
+      "max": 1.8930483000003733
+    },
+    "dense_decode_time_seconds": {
+      "count": 120,
+      "mean": 0.014504614999653616,
+      "std": 0.005897828577975198,
+      "median": 0.011168800003360957,
+      "p95": 0.02196718501218129,
+      "min": 0.008008399978280067,
+      "max": 0.02359579998301342
+    },
+    "geometry_postprocess_time_seconds": {
+      "count": 120,
+      "mean": 0.014372834999327703,
+      "std": 0.0012112222396086511,
+      "median": 0.014373599988175556,
+      "p95": 0.016475900015211663,
+      "min": 0.012201800011098385,
+      "max": 0.017507100012153387
+    },
+    "model_inference_time_seconds": {
+      "count": 120,
+      "mean": 1.540733645002668,
+      "std": 0.28812703534800327,
+      "median": 1.4436206499813125,
+      "p95": 1.8869957350194455,
+      "min": 1.1668968999874778,
+      "max": 1.9135697999736294
+    },
+    "end_to_end_compute_time_seconds": {
+      "count": 120,
+      "mean": 1.5551064800019958,
+      "std": 0.28776073798843543,
+      "median": 1.4583602499624249,
+      "p95": 1.9002463100157911,
+      "min": 1.179316999972798,
+      "max": 1.927938999957405
+    },
+    "export_io_time_seconds": {
+      "count": 120,
+      "mean": 0.09722805916244397,
+      "std": 0.005177869289390343,
+      "median": 0.09690335000050254,
+      "p95": 0.10423867001663893,
+      "min": 0.0868317999993451,
+      "max": 0.12496059999102727
+    },
+    "end_to_end_with_export_time_seconds": {
+      "count": 120,
+      "mean": 1.6523345391644397,
+      "std": 0.28666042008706,
+      "median": 1.5540723999438342,
+      "p95": 1.9953191099135439,
+      "min": 1.2777375999721698,
+      "max": 2.020106299954932
+    }
+  },
+  "metrics_per_sample": {
+    "mask_iou": {
+      "count": 120,
+      "mean": 0.7516923728155838,
+      "std": 0.06362049735032352,
+      "min": 0.5297247465237499,
+      "max": 0.870185390473567
+    },
+    "mask_dice": {
+      "count": 120,
+      "mean": 0.8528872541112648,
+      "std": 0.04570733503523497,
+      "min": 0.6917724204539798,
+      "max": 0.9305465858746121
+    },
+    "area_relative_error": {
+      "count": 120,
+      "mean": 0.12427150962576669,
+      "std": 0.09389667741135117,
+      "min": 0.013910001656952753,
+      "max": 0.4735456963004809
+    },
+    "centroid_distance_normalized": {
+      "count": 120,
+      "mean": 0.016412884010513544,
+      "std": 0.008546220457163587,
+      "min": 0.002985109954306409,
+      "max": 0.04586480475559957
+    },
+    "boundary_chamfer_normalized": {
+      "count": 120,
+      "mean": 0.008124702985057911,
+      "std": 0.002084659249017382,
+      "min": 0.0042007811106497825,
+      "max": 0.016319651357885583
+    },
+    "boundary_hausdorff_normalized": {
+      "count": 120,
+      "mean": 0.0316375218979977,
+      "std": 0.008253017885083187,
+      "min": 0.015474611435538877,
+      "max": 0.06275693928977062
+    },
+    "polygon_count_abs_diff": {
+      "count": 120,
+      "mean": 0.03611111111111111,
+      "std": 0.11218233614615927,
+      "min": 0.0,
+      "max": 0.6666666666666666
+    }
+  },
+  "metrics_per_layer": {
+    "mask_iou": {
+      "count": 360,
+      "mean": 0.7516923728155841,
+      "std": 0.11464938415145841,
+      "min": 0.3054393305439331,
+      "max": 0.9186687238263169
+    },
+    "mask_dice": {
+      "count": 360,
+      "mean": 0.852887254111265,
+      "std": 0.08235168249200753,
+      "min": 0.46794871794871795,
+      "max": 0.9576105686387134
+    },
+    "area_relative_error": {
+      "count": 360,
+      "mean": 0.1242715096257667,
+      "std": 0.14733421338036837,
+      "min": 0.00023207240659085636,
+      "max": 1.1356521739130434
+    },
+    "centroid_distance_normalized": {
+      "count": 360,
+      "mean": 0.016412884010513544,
+      "std": 0.01396623016257918,
+      "min": 0.00010960757487356095,
+      "max": 0.1074163458834894
+    },
+    "boundary_chamfer_normalized": {
+      "count": 360,
+      "mean": 0.00812470298505791,
+      "std": 0.003111059660416628,
+      "min": 0.002634247179104215,
+      "max": 0.021828055675500477
+    },
+    "boundary_hausdorff_normalized": {
+      "count": 360,
+      "mean": 0.03163752189799769,
+      "std": 0.012289922685158222,
+      "min": 0.01235264729139684,
+      "max": 0.11899645324485458
+    },
+    "polygon_count_abs_diff": {
+      "count": 360,
+      "mean": 0.03611111111111111,
+      "std": 0.20090459009437203,
+      "min": 0.0,
+      "max": 2.0
+    }
+  }
+}

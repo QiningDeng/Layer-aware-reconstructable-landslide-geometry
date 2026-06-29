@@ -1,0 +1,70 @@
+{
+  "sample_name": "1023",
+  "source_image": "1023.png",
+  "input_json": "1023_layer_polygons.json",
+  "feature_file": "1023_features.npz",
+  "grid_size": {
+    "width": 512,
+    "height": 512
+  },
+  "normalization_transform": {
+    "scale": 1.103448275862069,
+    "offset_x": 66.20689655172413,
+    "offset_y": 16.0,
+    "orig_width": 345,
+    "orig_height": 436,
+    "target_width": 512,
+    "target_height": 512,
+    "padding": 16
+  },
+  "channels": {
+    "feature_tensor": [
+      "sdf_norm_yellow",
+      "sdf_norm_green",
+      "sdf_norm_blue",
+      "corner_field_yellow",
+      "corner_field_green",
+      "corner_field_blue",
+      "mask_yellow",
+      "mask_green",
+      "mask_blue"
+    ]
+  },
+  "layers": [
+    {
+      "layer_name": "yellow",
+      "vertical_rank": "top",
+      "input_polygon_count": 1,
+      "corner_count": 6
+    },
+    {
+      "layer_name": "green",
+      "vertical_rank": "middle",
+      "input_polygon_count": 1,
+      "corner_count": 5
+    },
+    {
+      "layer_name": "blue",
+      "vertical_rank": "bottom",
+      "input_polygon_count": 1,
+      "corner_count": 6
+    }
+  ],
+  "config": {
+    "grid_width": 512,
+    "grid_height": 512,
+    "canvas_padding": 16,
+    "sdf_clip_value": 64.0,
+    "corner_sigma": 2.5,
+    "corner_angle_threshold_deg": 140.0,
+    "corner_polygon_simplify_ratio": 0.01,
+    "min_polygon_area_pixels": 3.0,
+    "contour_approx_epsilon_ratio": 0.002,
+    "layer_order_preference": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "overlay_boundary_thickness": 1
+  }
+}

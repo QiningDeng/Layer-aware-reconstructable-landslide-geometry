@@ -1,0 +1,9 @@
+{
+  "sequence": 20,
+  "total_runs": 20,
+  "model_type": "autodecoder",
+  "latent_dim": 512,
+  "run_name": "stageB_autodecoder--latent_dim_512",
+  "updated_at": "2026-06-17T19:22:56+08:00",
+  "status": "train"
+}

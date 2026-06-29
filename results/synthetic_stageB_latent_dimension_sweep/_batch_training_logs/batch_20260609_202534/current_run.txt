@@ -1,0 +1,1 @@
+20/20 | autodecoder | latent_dim=512 | train
