@@ -1,0 +1,9 @@
+image_name: 32.png
+image_size: [1024, 512]
+seed_extraction_mode: hue_palette
+active_colors_detected: ['red', 'blue', 'green']
+vertical_order_top_to_bottom: ['red', 'green', 'blue']
+seed_pixel_counts: {'red': 18672, 'yellow': 56, 'green': 6419, 'blue': 12134}
+layer_pixel_counts: {'red': 20206, 'green': 6915, 'blue': 13056}
+polygon_counts: {'red': 1, 'green': 2, 'blue': 1}
+outputs: {'json': 'D:/博士期间发表论文/辰轩-秀如-其宁_合著论文/★3.18数据预处理/★3.18边界提取ALL\\32_layer_polygons.json', 'overlay': 'D:/博士期间发表论文/辰轩-秀如-其宁_合著论文/★3.18数据预处理/★3.18边界提取ALL\\32_contour_overlay.png', 'overlay_cropped': 'D:/博士期间发表论文/辰轩-秀如-其宁_合著论文/★3.18数据预处理/★3.18边界提取ALL\\32_contour_overlay_cropped.png', 'seed_visualization': 'D:/博士期间发表论文/辰轩-秀如-其宁_合著论文/★3.18数据预处理/★3.18边界提取ALL\\32_seed_visualization.png', 'steps': 'D:/博士期间发表论文/辰轩-秀如-其宁_合著论文/★3.18数据预处理/★3.18边界提取ALL\\32_steps.png'}
