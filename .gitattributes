@@ -1,3 +1,23 @@
+# Source and documentation files
+*.py text eol=lf
+*.md text eol=lf
+
+# Numerical feature databases and model checkpoints
 *.npz filter=lfs diff=lfs merge=lfs -text
+*.npy filter=lfs diff=lfs merge=lfs -text
 *.pt filter=lfs diff=lfs merge=lfs -text
 *.pth filter=lfs diff=lfs merge=lfs -text
+*.h5 filter=lfs diff=lfs merge=lfs -text
+
+# Synthetic generated databases and all associated PNG outputs
+data/synthetic_profiles/background_cleaned_images/** filter=lfs diff=lfs merge=lfs -text
+data/synthetic_profiles/layer_polygon_database/**/*.png filter=lfs diff=lfs merge=lfs -text
+data/synthetic_profiles/layer_polygon_database/*.png filter=lfs diff=lfs merge=lfs -text
+data/synthetic_no_learning_representation_database/** filter=lfs diff=lfs merge=lfs -text
+
+# RER2023-derived generated databases and tabular outputs
+data/rer2023/single_layer_field_database/** filter=lfs diff=lfs merge=lfs -text
+data/rer2023/latent_feature_tables/** filter=lfs diff=lfs merge=lfs -text
+
+# Generated model outputs, figures, masks, and evaluation tables
+results/** filter=lfs diff=lfs merge=lfs -text
