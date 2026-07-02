@@ -34,6 +34,10 @@ The scripts are organized according to the main workflow of the manuscript. The 
 
 Most numerical feature databases and model-related binary files are tracked using Git LFS. Users should install Git LFS before cloning the repository if they need to download the complete feature databases and model outputs.
 
+For detailed descriptions of the released datasets and derivative databases, see `DATA_USAGE.md`.
+
+For script-level usage instructions and command-line running examples, see `CODE_USAGE.md`.
+
 ## Synthetic MatDEM data note
 
 The synthetic layered-profile images used in this repository were derived from MatDEM-based landslide deposition simulations originally developed for AI-enhanced landslide deposition prediction. Users who use the raw synthetic MatDEM images or derivative datasets generated from them should cite the original synthetic-data source:
