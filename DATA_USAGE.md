@@ -1,4 +1,4 @@
-\# Data usage guide
+# Data usage guide
 
 
 
@@ -6,7 +6,7 @@ This document describes the datasets, derived feature databases, model outputs, 
 
 
 
-\## 1. Overview
+## 1. Overview
 
 
 
@@ -24,7 +24,7 @@ The main purpose of the repository is to support reproducible geometric represen
 
 
 
-\## 2. Git LFS requirement
+## 2. Git LFS requirement
 
 
 
@@ -50,11 +50,11 @@ If Git LFS is not installed, only lightweight pointer files may be downloaded fo
 
 
 
-\## 3. Repository data structure
+## 3. Repository data structure
 
 
 
-\### 3.1 Synthetic layered-profile data
+### 3.1 Synthetic layered-profile data
 
 
 
@@ -106,7 +106,7 @@ If Git LFS is not installed, only lightweight pointer files may be downloaded fo
 
 
 
-\### 3.2 RER2023-derived polygon data
+### 3.2 RER2023-derived polygon data
 
 
 
@@ -142,11 +142,11 @@ If Git LFS is not installed, only lightweight pointer files may be downloaded fo
 
 
 
-\## 4. Important data-source notes
+## 4. Important data-source notes
 
 
 
-\### 4.1 Synthetic MatDEM data
+### 4.1 Synthetic MatDEM data
 
 
 
@@ -162,7 +162,7 @@ The present repository further processes these images into background-cleaned pr
 
 
 
-\### 4.2 RER2023 data
+### 4.2 RER2023 data
 
 
 
@@ -186,7 +186,7 @@ The official public release is available through Zenodo at: https://doi.org/10.5
 
 
 
-\## 5. Script-to-data correspondence
+## 5. Script-to-data correspondence
 
 
 
@@ -194,7 +194,7 @@ The main scripts are stored in `scripts/`.
 
 
 
-\### 5.1 Synthetic layered-profile workflow
+### 5.1 Synthetic layered-profile workflow
 
 
 
@@ -230,7 +230,7 @@ The main scripts are stored in `scripts/`.
 
 
 
-\### 5.2 RER2023-derived polygon workflow
+### 5.2 RER2023-derived polygon workflow
 
 
 
@@ -266,7 +266,7 @@ The main scripts are stored in `scripts/`.
 
 
 
-\## 6. Suggested use cases
+## 6. Suggested use cases
 
 
 
@@ -288,7 +288,7 @@ Users may use this repository for the following purposes:
 
 
 
-\## 7. Recommended usage order
+## 7. Recommended usage order
 
 
 
@@ -328,7 +328,7 @@ For users interested in the RER2023-derived polygon experiment:
 
 
 
-\## 8. Notes on derivative data
+## 8. Notes on derivative data
 
 
 
