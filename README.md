@@ -56,9 +56,5 @@ The official public release of the dataset can be accessed via Zenodo at: https:
 
 If this repository is useful for you, please cite.
 
-If you use the raw synthetic MatDEM layered-profile images or derivative datasets generated from them, please also cite:
-
-Cui, Y., Gong, C., Zheng, J., Wang, K., Han, J., Liu, W., Zhou, Y., 2026. AI-enhanced landslide deposition prediction: a novel framework integrating discrete element method and generative adversarial networks. Engineering Geology, 108752. https://doi.org/10.1016/j.enggeo.2026.108752.
-
-If you use the RER2023-derived data or reproduce the RER2023 preprocessing workflow, please obtain and cite the original RER2023 dataset according to its official publication and data repository.
+If you use the raw synthetic MatDEM layered-profile images or derivative datasets generated from them, please also cite.
 
