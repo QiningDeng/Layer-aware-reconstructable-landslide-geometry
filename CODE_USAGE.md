@@ -1,4 +1,4 @@
-\# Code usage and running examples
+# Code usage and running examples
 
 
 
@@ -42,7 +42,7 @@ All examples write newly generated outputs to the `outputs/` folder to avoid ove
 
 
 
-\## 1. Recommended environment
+## 1. Recommended environment
 
 
 
@@ -76,37 +76,29 @@ For GPU acceleration, install the PyTorch version that matches the local CUDA ve
 
 
 
-\## 2. Script overview
+## 2. Script overview
 
 
 
-| Script                                                                       | Main purpose                                                                                        | Main input                                         | Main output                                                                                         |
-
-| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-
-| `scripts/stageA\_sdf\_feature\_database.py`                                     | Builds the Stage A SDF-corner-mask database from layered polygon JSON files                         | `data/synthetic\_profiles/layer\_polygon\_database/`  | Stage A feature files, metadata, self-check polygons, self-check visualizations, evaluation reports |
-
-| `scripts/stageB\_joint\_implicit\_train\_eval\_predict\_timing\_resume\_realtime.py` | Trains, evaluates, and predicts synthetic layered-profile latent reconstruction models              | Stage A feature database                           | Checkpoints, logs, curves, evaluation tables, predicted fields, reconstructed masks                 |
-
-| `scripts/batch\_train\_stageB\_all\_dimensions.py`                               | Launches multiple Stage B runs for VAE and auto-decoder models under different latent dimensions    | Stage A feature database                           | Latent-dimension sweep results                                                                      |
-
-| `scripts/stageB\_section4\_4\_tabular\_reconstruction\_batch.py`                  | Exports Section 4.4 latent tables, reconstruction metrics, and representative overlays              | Stage B model folders and Stage A feature database | Latent feature tables, reconstruction summaries, visual examples                                    |
-
-| `scripts/01\_build\_rer2023\_single\_layer\_field\_database.py`                    | Builds a single-layer SDF-corner-mask database from landslide polygon shapefiles                    | Original RER2023 shapefile                         | RER2023-derived feature database                                                                    |
-
-| `scripts/02\_train\_rer2023\_single\_layer\_field\_model.py`                       | Trains and evaluates single-layer VAE or auto-decoder models                                        | RER2023-derived feature database                   | Checkpoints, history, curves, evaluation results                                                    |
-
-| `scripts/03\_evaluate\_rer2023\_reconstruction\_visuals.py`                      | Performs full train/validation/test evaluation, outlier filtering, and class-balanced visualization | RER2023 feature database and best checkpoint       | Raw metrics, filtered metrics, summary tables, visual cases                                         |
-
-| `scripts/05\_export\_rer2023\_latent\_features.py`                               | Exports full-sample latent features by posterior fitting with a fixed decoder                       | RER2023 feature database and best checkpoint       | Latent feature tables and IoU-filtered downstream tables                                            |
+| Script                                                                                                                                             | Main purpose                                                          | Main input                                 | Main output                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------- |
+| [`stageA_sdf_feature_database.py`](scripts/stageA_sdf_feature_database.py)                                                                         | Builds the Stage A SDF-corner-mask database                           | Layered polygon JSON files                 | Feature files, metadata, self-check results, and evaluation reports              |
+| [`stageB_joint_implicit_train_eval_predict_timing_resume_realtime.py`](scripts/stageB_joint_implicit_train_eval_predict_timing_resume_realtime.py) | Trains, evaluates, and predicts layered-profile reconstruction models | Stage A feature database                   | Checkpoints, logs, evaluation results, predicted fields, and reconstructed masks |
+| [`batch_train_stageB_all_dimensions.py`](scripts/batch_train_stageB_all_dimensions.py)                                                             | Runs VAE and auto-decoder experiments across latent dimensions        | Stage A feature database                   | Latent-dimension sweep results                                                   |
+| [`stageB_section4_4_tabular_reconstruction_batch.py`](scripts/stageB_section4_4_tabular_reconstruction_batch.py)                                   | Exports latent tables and reconstruction results for Section 4.4      | Stage B model folders and Stage A database | Latent tables, reconstruction summaries, and visual examples                     |
+| [`01_build_rer2023_single_layer_field_database.py`](scripts/01_build_rer2023_single_layer_field_database.py)                                       | Builds the RER2023 single-layer feature database                      | RER2023 shapefile                          | RER2023 feature database                                                         |
+| [`02_train_rer2023_single_layer_field_model.py`](scripts/02_train_rer2023_single_layer_field_model.py)                                             | Trains and evaluates RER2023 VAE or auto-decoder models               | RER2023 feature database                   | Checkpoints, training history, and evaluation results                            |
+| [`03_evaluate_rer2023_reconstruction_visuals.py`](scripts/03_evaluate_rer2023_reconstruction_visuals.py)                                           | Evaluates reconstruction performance and generates visual cases       | RER2023 database and best checkpoint       | Metrics, summary tables, and visual cases                                        |
+| [`05_export_rer2023_latent_features.py`](scripts/05_export_rer2023_latent_features.py)                                                             | Exports latent features using posterior fitting                       | RER2023 database and best checkpoint       | Latent feature tables and IoU-filtered tables                                    |
 
 
 
-\## 3. Synthetic layered-profile workflow
+
+## 3. Synthetic layered-profile workflow
 
 
 
-\### 3.1 Build the Stage A SDF-corner-mask feature database
+### 3.1 Build the Stage A SDF-corner-mask feature database
 
 
 
@@ -188,7 +180,7 @@ data/synthetic\_stageA\_feature\_database/
 
 
 
-\### 3.2 Train a synthetic Stage B VAE model
+### 3.2 Train a synthetic Stage B VAE model
 
 
 
@@ -256,7 +248,7 @@ python scripts/stageB\_joint\_implicit\_train\_eval\_predict\_timing\_resume\_re
 
 
 
-\### 3.3 Train a synthetic Stage B joint implicit auto-decoder model
+### 3.3 Train a synthetic Stage B joint implicit auto-decoder model
 
 
 
@@ -322,7 +314,7 @@ python scripts/stageB\_joint\_implicit\_train\_eval\_predict\_timing\_resume\_re
 
 
 
-\### 3.4 Resume a synthetic Stage B training run
+### 3.4 Resume a synthetic Stage B training run
 
 
 
@@ -364,7 +356,7 @@ If the optimizer state is not compatible or a fresh optimizer is preferred, add:
 
 
 
-\### 3.5 Evaluate a synthetic Stage B checkpoint
+### 3.5 Evaluate a synthetic Stage B checkpoint
 
 
 
@@ -408,7 +400,7 @@ python scripts/stageB\_joint\_implicit\_train\_eval\_predict\_timing\_resume\_re
 
 
 
-\### 3.6 Export predictions from a synthetic Stage B checkpoint
+### 3.6 Export predictions from a synthetic Stage B checkpoint
 
 
 
@@ -428,7 +420,7 @@ python scripts/stageB\_joint\_implicit\_train\_eval\_predict\_timing\_resume\_re
 
 
 
-\### 3.7 Run the full latent-dimension sweep
+### 3.7 Run the full latent-dimension sweep
 
 
 
@@ -518,7 +510,7 @@ results/synthetic\_stageB\_latent\_dimension\_sweep/
 
 
 
-\### 3.8 Export Section 4.4 latent tables and reconstruction visualizations
+### 3.8 Export Section 4.4 latent tables and reconstruction visualizations
 
 
 
@@ -600,7 +592,7 @@ python scripts/stageB\_section4\_4\_tabular\_reconstruction\_batch.py \\
 
 
 
-\## 4. RER2023-derived landslide polygon workflow
+## 4. RER2023-derived landslide polygon workflow
 
 
 
@@ -620,7 +612,7 @@ data/rer2023/single\_layer\_field\_database/
 
 
 
-\### 4.1 Build a single-layer field database from an original shapefile
+### 4.1 Build a single-layer field database from an original shapefile
 
 
 
@@ -732,7 +724,7 @@ outputs/rer2023\_single\_layer\_field\_database/
 
 
 
-\### 4.2 Train a RER2023 single-layer auto-decoder model
+### 4.2 Train a RER2023 single-layer auto-decoder model
 
 
 
@@ -818,7 +810,7 @@ python scripts/02\_train\_rer2023\_single\_layer\_field\_model.py train \\
 
 
 
-\### 4.3 Train a RER2023 single-layer VAE model
+### 4.3 Train a RER2023 single-layer VAE model
 
 
 
@@ -850,7 +842,7 @@ python scripts/02\_train\_rer2023\_single\_layer\_field\_model.py train \\
 
 
 
-\### 4.4 Resume RER2023 model training
+### 4.4 Resume RER2023 model training
 
 
 
@@ -888,7 +880,7 @@ If restarting the monitoring logic is needed after resuming, add:
 
 
 
-\### 4.5 Evaluate an existing RER2023 checkpoint
+### 4.5 Evaluate an existing RER2023 checkpoint
 
 
 
@@ -948,7 +940,7 @@ python scripts/02\_train\_rer2023\_single\_layer\_field\_model.py evaluate \\
 
 
 
-\### 4.6 Run full reconstruction evaluation and outlier-filtered visualization
+### 4.6 Run full reconstruction evaluation and outlier-filtered visualization
 
 
 
@@ -1052,7 +1044,7 @@ python scripts/03\_evaluate\_rer2023\_reconstruction\_visuals.py \\
 
 
 
-\### 4.7 Export RER2023 latent feature tables
+### 4.7 Export RER2023 latent feature tables
 
 
 
@@ -1136,7 +1128,7 @@ data/rer2023/latent\_feature\_tables/
 
 
 
-\## 5. Existing precomputed outputs
+## 5. Existing precomputed outputs
 
 
 
@@ -1168,7 +1160,7 @@ Users do not need to rerun all scripts to inspect the manuscript-related outputs
 
 
 
-\## 6. Suggested quick verification order
+## 6. Suggested quick verification order
 
 
 
@@ -1246,7 +1238,7 @@ python scripts/02\_train\_rer2023\_single\_layer\_field\_model.py evaluate \\
 
 
 
-\## 7. Notes and cautions
+## 7. Notes and cautions
 
 
 
