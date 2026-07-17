@@ -2,7 +2,7 @@
 
 This repository provides the datasets, processing scripts, model outputs, and reproducibility materials associated with the study:
 
-**From layered deposit boundaries to reconstructable low-dimensional features: a layer-aware implicit geometric framework for landslide profile representation**
+**From layered landslide profiles to reconstructable low-dimensional descriptors: a layer-aware implicit geometric framework**
 
 The repository focuses on a geometry-centered workflow for converting landslide profile and polygon boundaries into compact, reconstructable, and tabular geometric descriptors. The workflow includes background-cleaned synthetic layered-profile images, layer-wise polygon extraction, SDF-corner-mask feature construction, no-learning self-check reconstruction, latent representation learning with VAE and joint implicit auto-decoder models, inverse reconstruction, and downstream landslide-polygon feature-table experiments.
 
