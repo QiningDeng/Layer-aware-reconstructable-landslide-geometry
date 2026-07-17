@@ -1,4 +1,4 @@
-# Layer-aware reconstructable landslide geometry
+# Introduction
 
 This repository provides the datasets, processing scripts, model outputs, and reproducibility materials associated with the study:
 
