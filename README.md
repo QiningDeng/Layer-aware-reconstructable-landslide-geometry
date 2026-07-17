@@ -1,4 +1,4 @@
-<img width="945" height="527" alt="图片" src="https://github.com/user-attachments/assets/969e07cb-6956-42c2-b65f-0083a95fa856" />
+<img width="10493" height="5851" alt="模型架构图2 3++" src="https://github.com/user-attachments/assets/130349d9-71ad-4eb9-abbc-dbe14a23f073" />
 
 
 # Introduction
