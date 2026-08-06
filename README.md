@@ -1,4 +1,5 @@
-<img width="10493" height="5851" alt="模型架构图2 3++" src="https://github.com/user-attachments/assets/130349d9-71ad-4eb9-abbc-dbe14a23f073" />
+<img width="1063" height="593" alt="image" src="https://github.com/user-attachments/assets/90673bae-0470-4d2b-a080-d8f8c74b876a" />
+
 Coordinate-conditioned latent representation learning under the variational autoencoder and optimization-based auto-decoder configurations.
 
 # Introduction
