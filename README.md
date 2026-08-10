@@ -1,62 +1,359 @@
-<img width="1063" height="593" alt="image" src="https://github.com/user-attachments/assets/90673bae-0470-4d2b-a080-d8f8c74b876a" />
+# Layer-aware reconstructable landslide geometry framework
 
-Coordinate-conditioned latent representation learning under the variational autoencoder and optimization-based auto-decoder configurations.
+<p align="center">
+  <img width="1063" alt="Coordinate-conditioned latent representation learning framework"
+       src="https://github.com/user-attachments/assets/90673bae-0470-4d2b-a080-d8f8c74b876a" />
+</p>
 
-# Introduction
+<p align="center">
+  <em>
+  Coordinate-conditioned latent representation learning under the variational autoencoder
+  and optimization-based auto-decoder configurations.
+  </em>
+</p>
+
+## Overview
 
 This repository provides the datasets, processing scripts, model outputs, and reproducibility materials associated with the study:
 
-**From layered landslide profiles to reconstructable low-dimensional descriptors: a layer-aware implicit geometric framework**
+**From layered landslide-deposit profiles to reconstructable low-dimensional descriptors: a layer-aware implicit geometric framework**
 
-The repository focuses on a geometry-centered workflow for converting landslide profile and polygon boundaries into compact, reconstructable, and tabular geometric descriptors. The workflow includes background-cleaned synthetic layered-profile images, layer-wise polygon extraction, SDF-corner-mask feature construction, no-learning self-check reconstruction, latent representation learning with VAE and joint implicit auto-decoder models, inverse reconstruction, and downstream landslide-polygon feature-table experiments.
+The repository implements a geometry-centered workflow for converting landslide profiles and mapped landslide polygons into compact, fixed-length, and reconstructable geometric descriptors.
+
+For synthetic three-layer landslide-deposit profiles, the workflow includes valid-domain extraction, layer-wise polygon construction, signed-distance, corner-response, and occupancy field generation, deterministic SDF-sign round-trip verification, latent representation learning, descriptor export, and inverse polygon reconstruction.
+
+Two independently trained latent-inference configurations are provided for the synthetic experiment:
+
+- a variational autoencoder (VAE), which performs encoder-based amortized inference;
+- an optimization-based auto-decoder, which represents each sample using an optimizable latent code.
+
+A separate single-polygon auto-decoder configuration is provided for the RER2023 landslide inventory. In this experiment, each mapped polygon is represented by a signed-distance field (SDF) and a binary mask. Sample-specific latent fitting is then used to obtain reconstructable descriptors for polygon reconstruction and downstream landslide-type classification.
+
+The main purpose of the repository is to provide a reproducible connection between:
+
+**geometry → implicit fields → low-dimensional descriptors → reconstructed geometry**
+
+rather than treating the exported latent features as unconstrained hidden representations.
+
 
 ## Repository contents
 
-The repository contains two main experimental parts.
+The repository contains two main experimental workflows.
 
-First, the synthetic layered-profile experiment provides 1,200 MatDEM-generated three-layer landslide deposit profiles and their derived geometric databases. These files include raw synthetic images, background-cleaned images, layer-wise polygon records, no-learning SDF-corner-mask representation databases, Stage A feature databases, and Stage B latent-dimension sweep results for VAE and joint implicit auto-decoder models.
+### 1. Synthetic three-layer landslide-deposit profiles
 
-Second, the RER2023 landslide-polygon experiment provides derivative single-layer field databases, latent model training outputs, reconstruction evaluation results, visualization outputs, and exported latent feature tables. These materials are intended to support the polygon-level reconstruction and downstream morphology-based analysis reported in the manuscript.
+The synthetic experiment uses 1,200 MatDEM-derived three-layer landslide-deposit profiles and their derived geometric databases.
+
+The released materials include:
+
+- source synthetic profile images;
+- background-cleaned profile images;
+- layer-wise polygon records;
+- signed-distance, corner-response, and occupancy field databases;
+- deterministic SDF-sign round-trip reconstruction outputs;
+- VAE and optimization-based auto-decoder training results;
+- latent-dimension screening results;
+- exported latent descriptor tables;
+- inverse-reconstruction results and evaluation outputs.
+
+The synthetic experiment evaluates whether layered profile geometry can be compressed into fixed-length descriptors while retaining a quantitatively verifiable reconstruction pathway.
+
+
+### 2. RER2023 landslide-polygon experiment
+
+The RER2023 experiment applies the reconstructable representation principle to mapped planform landslide polygons from the May 2023 Emilia-Romagna event.
+
+The released derivative materials include:
+
+- single-polygon SDF–mask field databases;
+- single-polygon auto-decoder training outputs;
+- trained model checkpoints;
+- sample-specific latent fitting results;
+- reconstruction evaluation results;
+- exported reconstructable latent descriptor tables;
+- visualization outputs;
+- downstream landslide-type classification materials.
+
+The original RER2023 inventory is not redistributed as a dataset generated by this study. Users should obtain the original inventory from its official public release and follow the corresponding licensing and citation requirements.
+
+
+## Repository structure
+
+```text
+Layer-aware-reconstructable-landslide-geometry/
+│
+├── data/
+│   ├── synthetic_profiles/
+│   │   ├── raw_images/
+│   │   ├── background_cleaned_images/
+│   │   └── layer_polygon_database/
+│   │
+│   ├── synthetic_stageA_feature_database/
+│   ├── synthetic_no_learning_representation_database/
+│   │
+│   └── rer2023/
+│       ├── single_layer_field_database/
+│       └── latent_feature_tables/
+│
+├── results/
+│   ├── synthetic_stageB_latent_dimension_sweep/
+│   ├── rer2023_single_layer_latent_model/
+│   └── rer2023_reconstruction_evaluation_visuals/
+│
+├── scripts/
+│
+├── README.md
+├── DATA_USAGE.md
+└── CODE_USAGE.md
+```
+
+The directory names retain the naming convention used during development to preserve compatibility with the released scripts and reproducibility commands.
+
+
+## Synthetic workflow
+
+The principal synthetic workflow is:
+
+```text
+MatDEM-derived layered-profile images
+        ↓
+valid-domain extraction
+        ↓
+layer-labelled polygon construction
+        ↓
+coordinate normalization
+        ↓
+SDF + corner-response + occupancy fields
+        ↓
+deterministic SDF-sign round-trip verification
+        ↓
+VAE / optimization-based auto-decoder
+        ↓
+fixed-length latent descriptors
+        ↓
+SDF-based inverse reconstruction
+        ↓
+layer-wise polygon recovery and geometric evaluation
+```
+
+The deterministic round-trip stage is performed before latent representation learning and evaluates geometric changes introduced by normalization, rasterization, signed-distance construction, SDF-sign support recovery, and contour extraction.
+
+For learned reconstruction, final polygon support is recovered from the sign of the decoder-predicted signed-distance field. The occupancy branch is used as auxiliary supervision during synthetic model training but is not used to extract the final reconstructed polygon.
+
+
+## RER2023 workflow
+
+The RER2023 workflow is:
+
+```text
+RER2023 mapped landslide polygons
+        ↓
+polygon normalization
+        ↓
+SDF + binary mask representation
+        ↓
+single-polygon optimization-based auto-decoder
+        ↓
+sample-specific latent fitting
+        ↓
+64-dimensional reconstructable descriptors
+        ↓
+SDF-sign polygon reconstruction
+        ↓
+latent / morphometric / fused feature databases
+        ↓
+downstream multiclass landslide classification
+```
+
+Unlike the synthetic multilayer configuration, the RER2023 single-polygon model does not use a corner-response branch.
+
+The binary mask provides auxiliary supervision during model training, whereas final polygon reconstruction is performed from the sign of the predicted signed-distance field.
+
+
+## Main scripts
+
+The main scripts are stored in `scripts/`.
+
+### Synthetic layered-profile workflow
+
+- `stageA_sdf_feature_database.py`  
+  Builds the signed-distance, corner-response, and occupancy field database from layer-wise polygon records and performs deterministic representation self-checks.
+
+- `stageB_joint_implicit_train_eval_predict_timing_resume_realtime.py`  
+  Trains and evaluates the synthetic VAE and optimization-based auto-decoder configurations.
+
+- `batch_train_stageB_all_dimensions.py`  
+  Runs the latent-dimension screening experiments.
+
+- `stageB_section4_4_tabular_reconstruction_batch.py`  
+  Exports latent descriptor tables and performs inverse-reconstruction evaluation.
+
+### RER2023 workflow
+
+- `01_build_rer2023_single_layer_field_database.py`  
+  Builds the derivative single-polygon SDF–mask field database from landslide polygon inputs.
+
+- `02_train_rer2023_single_layer_field_model.py`  
+  Trains and evaluates the single-polygon latent reconstruction model.
+
+- `03_evaluate_rer2023_reconstruction_visuals.py`  
+  Performs reconstruction evaluation and generates quantitative and visual outputs.
+
+- `05_export_rer2023_latent_features.py`  
+  Exports deterministic latent descriptors for downstream analysis.
+
+For complete command-line arguments and running examples, see [`CODE_USAGE.md`](CODE_USAGE.md).
+
 
 ## Data organization
 
-* `data/synthetic_profiles/raw_images/`: raw synthetic MatDEM layered-profile images.
-* `data/synthetic_profiles/background_cleaned_images/`: profile images after removal of irrelevant background and non-study regions.
-* `data/synthetic_profiles/layer_polygon_database/`: layer-wise polygon records extracted from the synthetic profiles.
-* `data/synthetic_stageA_feature_database/`: Stage A SDF-corner-mask feature database for latent model training.
-* `data/synthetic_no_learning_representation_database/`: no-learning representation and self-check reconstruction outputs based on the Stage A geometric database.
-* `results/synthetic_stageB_latent_dimension_sweep/`: VAE and joint implicit auto-decoder results under latent dimensions of 1, 2, 4, 8, 16, 32, 64, 128, 256, and 512.
-* `data/rer2023/single_layer_field_database/`: derivative single-layer SDF-corner-mask database generated from the RER2023 landslide polygon inventory.
-* `results/rer2023_single_layer_latent_model/`: latent reconstruction model outputs for the RER2023 polygon experiment.
-* `results/rer2023_reconstruction_evaluation_visuals/`: full reconstruction evaluation, outlier-filtered metric tables, and visualization outputs.
-* `data/rer2023/latent_feature_tables/`: exported latent feature tables and related tabular data for downstream analysis.
-* `scripts/`: Python scripts used for database construction, model training, reconstruction evaluation, and feature-table export.
+### Synthetic data
+
+- `data/synthetic_profiles/raw_images/`  
+  MatDEM-derived synthetic layered-profile images used in this study.
+
+- `data/synthetic_profiles/background_cleaned_images/`  
+  Profile images after removal of irrelevant background and non-study regions.
+
+- `data/synthetic_profiles/layer_polygon_database/`  
+  Layer-wise polygon records extracted from the synthetic profiles.
+
+- `data/synthetic_stageA_feature_database/`  
+  Multi-field signed-distance, corner-response, and occupancy database used for synthetic latent-model training.
+
+- `data/synthetic_no_learning_representation_database/`  
+  Deterministic, training-free SDF-sign round-trip self-check outputs used to verify geometric consistency before latent learning.
+
+- `results/synthetic_stageB_latent_dimension_sweep/`  
+  VAE and optimization-based auto-decoder results for latent dimensions of 1, 2, 4, 8, 16, 32, 64, 128, 256, and 512.
+
+
+### RER2023-derived data
+
+- `data/rer2023/single_layer_field_database/`  
+  Derivative single-polygon SDF–mask field database generated from the RER2023 polygon inventory.
+
+- `results/rer2023_single_layer_latent_model/`  
+  Single-polygon latent-model checkpoints, optimization history, and reconstruction outputs.
+
+- `results/rer2023_reconstruction_evaluation_visuals/`  
+  Reconstruction evaluation tables, masks, representative cases, and publication-oriented visualization outputs.
+
+- `data/rer2023/latent_feature_tables/`  
+  Exported reconstructable latent descriptors and related feature tables used for downstream analysis.
+
+For detailed descriptions of released and derivative datasets, see [`DATA_USAGE.md`](DATA_USAGE.md).
+
 
 ## Reproducibility
 
-The scripts are organized according to the main workflow of the manuscript. The synthetic part covers background cleaning, polygon-based geometric representation, Stage A feature database construction, Stage B latent representation learning, and tabular reconstruction evaluation. The RER2023 part covers single-layer field database construction from polygon inventories, latent reconstruction model training, full reconstruction evaluation, and latent feature-table export.
+Large numerical feature databases, model checkpoints, and generated outputs are tracked using Git LFS.
 
-Most numerical feature databases and model-related binary files are tracked using Git LFS. Users should install Git LFS before cloning the repository if they need to download the complete feature databases and model outputs.
+Install Git LFS before cloning the complete repository:
 
-For detailed descriptions of the released datasets and derivative databases, see `DATA_USAGE.md`.
+```bash
+git lfs install
+git clone https://github.com/QiningDeng/Layer-aware-reconstructable-landslide-geometry.git
+cd Layer-aware-reconstructable-landslide-geometry
+git lfs pull
+```
 
-For script-level usage instructions and command-line running examples, see `CODE_USAGE.md`.
+Without Git LFS, large files may be retrieved only as lightweight pointer files.
 
-## Synthetic MatDEM data note
+The released scripts are organized according to the computational workflows reported in the manuscript. Newly generated outputs should preferably be written to a separate output directory rather than overwriting the precomputed manuscript results.
 
-The synthetic layered-profile images used in this repository were derived from MatDEM-based landslide deposition simulations originally developed for AI-enhanced landslide deposition prediction. Users who use the raw synthetic MatDEM images or derivative datasets generated from them should cite the original synthetic-data source:
+Detailed environment configuration, script-level arguments, and executable command examples are provided in:
 
-Cui, Y., Gong, C., Zheng, J., Wang, K., Han, J., Liu, W., Zhou, Y., 2026. AI-enhanced landslide deposition prediction: a novel framework integrating discrete element method and generative adversarial networks. Engineering Geology, 108752. https://doi.org/10.1016/j.enggeo.2026.108752.
+- [`CODE_USAGE.md`](CODE_USAGE.md)
 
-The present repository further processes these synthetic MatDEM images into background-cleaned images, layer-wise polygon records, SDF-corner-mask feature databases, no-learning reconstruction outputs, latent representation learning results, and tabular reconstructable geometric descriptors.
 
-## RER2023 data note
+## Recommended Python environment
 
-The RER2023 dataset is described in the following publication: Berti, M., Pizziolo, M., Scaroni, M., Generali, M., Critelli, V., Mulas, M., Tondo, M., Lelli, F., Fabbiani, C., Ronchetti, F., Ciccarese, G., Dal Seno, N., Ioriatti, E., Rani, R., Zuccarini, A., Simonelli, T., Corsini, A., 2025. RER2023: the landslide inventory dataset of the May 2023 Emilia-Romagna meteorological event. Earth System Science Data, 17(3), 1055–1074. https://doi.org/10.5194/essd-17-1055-2025.
+The code uses standard scientific-computing, deep-learning, image-processing, and geospatial Python packages.
 
-The official public release of the dataset can be accessed via Zenodo at: https://doi.org/10.5281/zenodo.13742643. Users should consult the original publication and data repository for detailed metadata, licensing conditions, and proper citation requirements.
+A representative environment can be created using:
+
+```bash
+conda create -n landslide_geometry python=3.10
+conda activate landslide_geometry
+
+pip install numpy pandas matplotlib opencv-python pillow tqdm scikit-learn openpyxl
+pip install torch torchvision torchaudio
+pip install geopandas shapely pyproj fiona
+```
+
+For GPU acceleration, install the PyTorch version appropriate for the local CUDA environment.
+
+CPU execution is possible for small preprocessing and testing tasks, while full latent-model training and sample-specific posterior fitting can require substantially greater computational time.
+
+
+## Data provenance
+
+### Synthetic MatDEM profiles
+
+The synthetic layered-profile images used in this study were derived from MatDEM-based landslide deposition simulations previously developed for AI-enhanced landslide deposition prediction.
+
+Users who use the source synthetic images or derivative datasets should cite:
+
+Cui, Y., Gong, C., Zheng, J., Wang, K., Han, J., Liu, W., Zhou, Y., 2026.  
+AI-enhanced landslide deposition prediction: a novel framework integrating discrete element method and generative adversarial networks.  
+*Engineering Geology*, 108752.  
+https://doi.org/10.1016/j.enggeo.2026.108752
+
+The present repository further processes these source profiles into background-cleaned images, layer-wise polygon records, implicit geometric field databases, deterministic reconstruction outputs, latent representation results, reconstructable tabular descriptors, and associated numerical outputs.
+
+
+### RER2023 landslide inventory
+
+The RER2023 inventory used in the real-polygon application is described by:
+
+Berti, M., Pizziolo, M., Scaroni, M., Generali, M., Critelli, V., Mulas, M., Tondo, M., Lelli, F., Fabbiani, C., Ronchetti, F., Ciccarese, G., Dal Seno, N., Ioriatti, E., Rani, R., Zuccarini, A., Simonelli, T., Corsini, A., 2025.  
+RER2023: the landslide inventory dataset of the May 2023 Emilia-Romagna meteorological event.  
+*Earth System Science Data*, 17(3), 1055–1074.  
+https://doi.org/10.5194/essd-17-1055-2025
+
+The official public release is available through Zenodo:
+
+https://doi.org/10.5281/zenodo.13742643
+
+The original RER2023 inventory should be obtained from the official source. This repository provides derivative field databases, latent-model outputs, reconstruction results, exported descriptors, and reproducibility scripts associated with the analyses reported in the manuscript.
+
+
+## Reconstructability of latent descriptors
+
+The exported latent descriptors are not intended to be self-contained geometric file formats.
+
+A descriptor is reconstructable together with:
+
+- the corresponding fitted decoder;
+- the Fourier coordinate encoding;
+- the field-channel definition;
+- the coordinate-normalization metadata.
+
+For the synthetic multilayer experiment, polygon reconstruction is based on the sign of the predicted signed-distance field for each layer.
+
+For the RER2023 single-polygon experiment, the same SDF-sign principle is used to recover the final polygon support.
+
+This design provides a direct and quantitatively testable link between the exported tabular descriptors and their represented geometry.
+
+
+## Code and data availability
+
+The processed datasets, derived feature tables, model configurations, experimental outputs, trained model checkpoints, numerical results, and source code supporting the study are publicly available through this repository.
+
+Users of the original or derivative datasets should cite the corresponding source publications and comply with the applicable licensing and citation requirements.
+
+
+## Documentation
+
+For detailed usage information, see:
+
+- [`CODE_USAGE.md`](CODE_USAGE.md) — environment setup, script descriptions, and command-line running examples.
+- [`DATA_USAGE.md`](DATA_USAGE.md) — dataset organization, provenance, derivative products, and recommended data usage.
+
 
 ## Citation
 
-If this repository is useful for you, please cite.
+If this repository is useful for your research, please cite the associated study.
 
+Publication details and DOI will be added after formal publication.
