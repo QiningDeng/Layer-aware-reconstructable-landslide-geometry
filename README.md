@@ -316,9 +316,7 @@ The synthetic layered-profile images used in this study were derived from MatDEM
 
 Users who use the source synthetic images or derivative datasets should cite:
 
-Cui, Y., Gong, C., Zheng, J., Wang, K., Han, J., Liu, W., Zhou, Y., 2026.  
-AI-enhanced landslide deposition prediction: a novel framework integrating discrete element method and generative adversarial networks.  
-*Engineering Geology*, 108752.  
+Cui, Y., Gong, C., Zheng, J., Wang, K., Han, J., Liu, W., Zhou, Y., 2026. AI-enhanced landslide deposition prediction: a novel framework integrating discrete element method and generative adversarial networks. *Engineering Geology*, 108752.  
 https://doi.org/10.1016/j.enggeo.2026.108752
 
 The present repository further processes these source profiles into background-cleaned images, layer-wise polygon records, implicit geometric field databases, deterministic reconstruction outputs, latent representation results, reconstructable tabular descriptors, and associated numerical outputs.
@@ -328,9 +326,7 @@ The present repository further processes these source profiles into background-c
 
 The RER2023 inventory used in the real-polygon application is described by:
 
-Berti, M., Pizziolo, M., Scaroni, M., Generali, M., Critelli, V., Mulas, M., Tondo, M., Lelli, F., Fabbiani, C., Ronchetti, F., Ciccarese, G., Dal Seno, N., Ioriatti, E., Rani, R., Zuccarini, A., Simonelli, T., Corsini, A., 2025.  
-RER2023: the landslide inventory dataset of the May 2023 Emilia-Romagna meteorological event.  
-*Earth System Science Data*, 17(3), 1055–1074.  
+Berti, M., Pizziolo, M., Scaroni, M., Generali, M., Critelli, V., Mulas, M., Tondo, M., Lelli, F., Fabbiani, C., Ronchetti, F., Ciccarese, G., Dal Seno, N., Ioriatti, E., Rani, R., Zuccarini, A., Simonelli, T., Corsini, A., 2025. RER2023: the landslide inventory dataset of the May 2023 Emilia-Romagna meteorological event. *Earth System Science Data*, 17(3), 1055–1074.  
 https://doi.org/10.5194/essd-17-1055-2025
 
 The official public release is available through Zenodo:
