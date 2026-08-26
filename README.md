@@ -247,9 +247,15 @@ For detailed descriptions of released and derivative datasets, see [`DATA_USAGE.
 
 ## Reproducibility
 
-Large numerical feature databases, model checkpoints, and generated outputs are tracked using Git LFS.
+### Repository download and Git LFS data
 
-Install Git LFS before cloning the complete repository:
+The source code, configuration files, tables, documentation, and small figures provided in this repository are stored directly in Git and can therefore be downloaded normally from GitHub, either individually or through the **Code → Download ZIP** option.
+
+Large numerical datasets and selected computational outputs, including files such as `.npz` archives, are managed separately using **Git Large File Storage (Git LFS)**. The corresponding tracking rules are defined in `.gitattributes`.
+
+Because **Git LFS objects are not included in the GitHub source-code archives for this repository**, downloading the repository through **Download ZIP** provides the regular Git-managed files but does not retrieve the actual contents of files tracked by Git LFS. For these files, the downloaded archive contains only Git LFS pointer files.
+
+To obtain the complete repository together with all Git LFS-managed datasets and computational results, users should install Git LFS and clone the repository using:
 
 ```bash
 git lfs install
@@ -258,13 +264,28 @@ cd Layer-aware-reconstructable-landslide-geometry
 git lfs pull
 ```
 
-Without Git LFS, large files may be retrieved only as lightweight pointer files.
+As this is a public repository, no repository ownership or write permission is required to retrieve the publicly available Git LFS objects.
 
-The released scripts are organized according to the computational workflows reported in the manuscript. Newly generated outputs should preferably be written to a separate output directory rather than overwriting the precomputed manuscript results.
+Users who only require the source code, tables, documentation, and small figures may download these materials directly from GitHub without installing Git LFS. Git LFS is required only when the large datasets or computational outputs tracked through LFS are needed for reproduction or further analysis.
 
-Detailed environment configuration, script-level arguments, and executable command examples are provided in:
+If the repository has already been cloned but the LFS-managed files have not yet been retrieved, they can be downloaded subsequently by running:
 
-- [`CODE_USAGE.md`](CODE_USAGE.md)
+```bash
+git lfs install
+git lfs pull
+```
+
+A file that has not yet been retrieved from Git LFS may appear as a small pointer file with content similar to:
+
+```text
+version https://git-lfs.github.com/spec/v1
+oid sha256:...
+size ...
+```
+
+In this case, running `git lfs pull` from the repository root will retrieve the corresponding large-file contents.
+
+Detailed environment configuration, script-level arguments, and executable command examples are provided in [`CODE_USAGE.md`](CODE_USAGE.md).
 
 
 ## Recommended Python environment
