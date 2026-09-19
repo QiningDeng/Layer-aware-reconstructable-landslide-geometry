@@ -360,6 +360,12 @@ This design provides a direct and quantitatively testable link between the expor
 
 The processed datasets, derived feature tables, model configurations, experimental outputs, trained model checkpoints, numerical results, and source code supporting the study are publicly available through this repository.
 
+The complete dataset and reproducibility materials associated with this repository are permanently archived on Zenodo:
+
+**DOI:** [10.5281/zenodo.22843582](https://doi.org/10.5281/zenodo.22843582)
+
+The Zenodo archive contains the complete data files, including the large files that were previously managed through Git LFS.
+
 Users of the original or derivative datasets should cite the corresponding source publications and comply with the applicable licensing and citation requirements.
 
 
