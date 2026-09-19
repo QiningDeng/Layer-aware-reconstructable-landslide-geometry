@@ -381,4 +381,4 @@ For detailed usage information, see:
 
 If this repository is useful for your research, please cite the associated study.
 
-Publication details and DOI will be added after formal publication.
+Deng, Q. et al. (2026). *From layered landslide-deposit profiles to reconstructable low-dimensional descriptors: A layer-aware implicit geometric framework*. Zenodo. https://doi.org/10.5281/zenodo.22843582
