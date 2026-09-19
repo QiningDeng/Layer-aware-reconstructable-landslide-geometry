@@ -1,5 +1,7 @@
 # Layer-aware reconstructable landslide geometry framework
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22843582.svg)](https://doi.org/10.5281/zenodo.22843582)
+
 <p align="center">
   <img width="1063" alt="Coordinate-conditioned latent representation learning framework"
        src="https://github.com/user-attachments/assets/90673bae-0470-4d2b-a080-d8f8c74b876a" />
