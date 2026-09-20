@@ -1,6 +1,6 @@
 # Layer-aware reconstructable landslide geometry framework
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22843582.svg)](https://doi.org/10.5281/zenodo.22843582)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22843582.svg)](https://doi.org/10.5281/zenodo.22843582) ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white) [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--8081--569X-a6ce39?logo=orcid&logoColor=white)](https://orcid.org/0009-0006-8081-569X)
 
 <p align="center">
   <img width="1063" alt="Coordinate-conditioned latent representation learning framework"
