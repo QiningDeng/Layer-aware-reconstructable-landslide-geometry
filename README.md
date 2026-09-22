@@ -1,6 +1,6 @@
 # Layer-aware reconstructable landslide geometry framework
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22843582.svg)](https://doi.org/10.5281/zenodo.22843582)
+[![DOI](https://img.shields.io/badge/DOI-10.7910%2FDVN%2FQKISYA-blue)](https://doi.org/10.7910/DVN/QKISYA)
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--8081--569X-a6ce39?logo=orcid&logoColor=white)](https://orcid.org/0009-0006-8081-569X)
 [![GitHub Stars](https://img.shields.io/github/stars/QiningDeng/Layer-aware-reconstructable-landslide-geometry?logo=github&color=FFD700&label=Stars)](https://github.com/QiningDeng/Layer-aware-reconstructable-landslide-geometry/stargazers)
@@ -361,13 +361,15 @@ This design provides a direct and quantitatively testable link between the expor
 
 ## Code and data availability
 
-The processed datasets, derived feature tables, model configurations, experimental outputs, trained model checkpoints, numerical results, and source code supporting the study are publicly available through this repository.
+The source code, processing scripts, configuration files, documentation, and lightweight reproducibility materials supporting this study are publicly available through this GitHub repository.
 
-The complete dataset and reproducibility materials associated with this repository are permanently archived on Zenodo:
+The complete dataset and reproducibility materials associated with this study are permanently archived in the Harvard Dataverse Repository:
 
-**DOI:** [10.5281/zenodo.22843582](https://doi.org/10.5281/zenodo.22843582)
+**DOI:** [10.7910/DVN/QKISYA](https://doi.org/10.7910/DVN/QKISYA)
 
-The Zenodo archive contains the complete data files, including the large files that were previously managed through Git LFS.
+The Harvard Dataverse archive contains the complete research data and computational outputs associated with this repository, including large files that were previously managed through Git Large File Storage (Git LFS).
+
+Large datasets are distributed as multi-part compressed archives. Users should download all parts of an archive into the same directory and initiate extraction from the `.zip.001` file only. The remaining archive parts will be read automatically during extraction.
 
 Users of the original or derivative datasets should cite the corresponding source publications and comply with the applicable licensing and citation requirements.
 
@@ -382,6 +384,18 @@ For detailed usage information, see:
 
 ## Citation
 
-If this repository is useful for your research, please cite the associated study.
+If you use the data, code, or reproducibility materials provided in this repository, please cite the associated dataset:
 
-Deng, Q. et al. (2026). *From layered landslide-deposit profiles to reconstructable low-dimensional descriptors: A layer-aware implicit geometric framework*. Zenodo. https://doi.org/10.5281/zenodo.22843582
+Deng, Qining; Cui, Yulong; Gong, Chenxuan; Zheng, Jun; Xu, Chong; Ma, Xiuru; Wei, Pingping (2026). *From Layered Landslide-Deposit Profiles to Reconstructable Low-Dimensional Descriptors: A Layer-Aware Implicit Geometric Framework*. Harvard Dataverse. https://doi.org/10.7910/DVN/QKISYA
+
+### BibTeX
+
+```bibtex
+@dataset{deng2026layeraware,
+  author    = {Deng, Qining and Cui, Yulong and Gong, Chenxuan and Zheng, Jun and Xu, Chong and Ma, Xiuru and Wei, Pingping},
+  title     = {From Layered Landslide-Deposit Profiles to Reconstructable Low-Dimensional Descriptors: A Layer-Aware Implicit Geometric Framework},
+  year      = {2026},
+  publisher = {Harvard Dataverse},
+  doi       = {10.7910/DVN/QKISYA},
+  url       = {https://doi.org/10.7910/DVN/QKISYA}
+}
